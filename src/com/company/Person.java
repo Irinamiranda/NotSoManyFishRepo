@@ -7,13 +7,24 @@ public class Person {
     private String firstName;
     private String lastName;
     private String sex;
+    private ArrayList<Person> dated = new ArrayList<>();
 
-    public Person(String firstName, String lastName, String sex){
+    public ArrayList<Person> getDated() {
+        return dated;
+    }
+
+    public Person() {
+    }
+
+    public Person(String firstName, String lastName, String sex) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.sex = sex;
     }
 
+    public void dateWith(Person person){
+        dated.add(person);
+    }
 
 
     public String getFirstName() {
@@ -24,24 +35,12 @@ public class Person {
         this.firstName = firstName;
     }
 
-
-
     public String getLastName() {
         return lastName;
     }
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
-    }
-
-
-    public Person() {
-
-    }
-
-    public Person(String name, String Sex){
-
-        this.sex = sex;
     }
 
     public String getSex() {
@@ -51,7 +50,6 @@ public class Person {
     public void setSex(String sex) {
         this.sex = sex;
     }
-
 
 
     @Override
